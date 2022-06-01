@@ -1,0 +1,28 @@
+<h1>All our flats</h1>
+<p>All <%= @flats.count%> flats.  </p>
+<%# <div class="link"><%= link_to ("<i class='fa-solid fa-plus'></i> Add new flat").html_safe, _path %>
+
+<div class="card-deck">
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-md-4">
+      <div class="card m-2 ">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="Card image cap">
+        <div class="card-body bg-light">
+          <h4 class="card-title"><%= flat.name%></h4>
+          <p class="card-text"><%= flat.address %></p>
+        </div>
+        <div class="card-content bg-light d-flex justify-content-around">
+          <p> <i class="fa-solid fa-user-astronaut"></i> <%= flat.number_of_guests %></p>
+          <p> <i class="fa-solid fa-piggy-bank"></i> <%= flat.price_per_night %></p>
+        </div>
+        <div class="card-footer bg-white d-inline p-2 d-flex justify-content-around">
+          <%= link_to "More info", flat_path(flat) %>
+          <a href="" class="text-warning">Edit</a>
+          <a href="" class="text-danger">Remove</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

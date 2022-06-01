@@ -8,9 +8,24 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Simple Airbnb</a>
+      <div class="d-flex justify-content-around mx-3">
+        <form class="form d-flex justify-content-around mx-3">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 mx-3" type="submit">Search</button>
+        </form>
+        <button class="btn btn-primary mx-3" type="submit">Add flat</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
